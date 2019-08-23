@@ -1,7 +1,7 @@
 body{
     margin: 0%;
     padding: 0%;
-    background: #f2f2f2;
+    background: #fff;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
@@ -9,12 +9,14 @@ body{
 }
 .centerTop{
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;
 }
 .formInp{
     width: 60%;
+    
 }
 .formSearch{
     border: none;
@@ -27,6 +29,13 @@ body{
     color: #3b3939;
     letter-spacing: 1px;
     word-spacing: 2px;
+}
+.imgLoad img{
+    width: 300px;
+}
+.imgLoad p{
+    margin-top: -4%;
+    font-size: 20px;
 }
 .searchBtn{
     width: 16%;
