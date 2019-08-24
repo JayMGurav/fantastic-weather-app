@@ -1,11 +1,13 @@
 import React from "react";
 import Load from "./Loading";
+import Display from "./display";
 
 class FormInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading:false,
+      isLoading:true,
+      flag:true,
       address: "",
       latitute: '',
       country : '',
@@ -33,7 +35,7 @@ class FormInput extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({isLoading:true})
+    this.setState({isLoading:true,flag:false})
     fetch('http://localhost:3000/find',{
       method: 'POST',
       headers: {
@@ -45,7 +47,7 @@ class FormInput extends React.Component {
       }),
     }).then(res=>res.json())
     .then(val=>{
-      console.log(val.temperature)
+      // console.log(val.temperature)
       this.setState({
         isLoading: false,
         latitute: val.latitute,
@@ -59,6 +61,7 @@ class FormInput extends React.Component {
         humidity : val.humidity,
         pressure : val.pressure,
       })
+      // console.log(this.state.wind)
     });
   }
 
@@ -79,10 +82,11 @@ class FormInput extends React.Component {
             Look up
           </button>
         </form>
-        <h1>{this.state.isLoading ? <Load/> : this.state.temperature}</h1>
+        {this.state.flag ? null : this.state.isLoading ? <Load/> : <Display data={this.state}/> }
       </div>
     );
   }
 }
 
 export default FormInput;
+// <Display data={this.state}/>

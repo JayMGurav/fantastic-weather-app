@@ -41,7 +41,7 @@ app.post('/find', (req, res) => {
                 icon: result.icon,
                 prediction : result.prediction,
                 summary : result.summary,
-                wind : result.windSpeed,
+                wind : result.wind,
                 humidity : result.humidity,
                 pressure : result.pressure
               });
