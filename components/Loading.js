@@ -1,5 +1,5 @@
 import React from 'react';
-import splash from '../public/weather.gif';
+import splash from '../public/icons/weather.gif';
 
 function Load(){
     return(

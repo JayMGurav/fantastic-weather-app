@@ -1,29 +1,35 @@
 import React from 'react';
-const cloudy = require('../public/cloudy.png')
+
+const wind = require('../public/icons/wind.png');
+const humidity = require('../public/icons/humidity.png');
 
 function Display(props){
-    console.log(cloudy)
+    const icon = require(`../public/icons/${props.data.icon}.png`);
    return(
        
     <div>
-        <h1>{props.data.temperature}</h1>
+        <h1>{props.data.temperature}{'\u00b0'}F</h1>
         <div className="extraDet">
             <div className="det">
-                <img src={`../public/${cloudy}`} alt="wind"/>
-                {props.data.wind} KM/Hr
+                Wind
+                <img src={wind} alt="wind"/>                
+                <div><span>{props.data.wind}</span> Km/hr</div>
             </div>
             <div className="det">
-                <img src={`../public/${cloudy}`} alt={props.data.icon}/>
+                Now
+                <img src={icon} alt={props.data.icon}/>
                 {props.data.summary}
             </div>
             <div className="det">
-                <img src={`../public/${cloudy}`} alt="humidity"/>
-                {props.data.humidity}%
+                Humidity
+                <img src={humidity} alt="humidity"/>                
+                <div><span>{props.data.humidity}</span>%</div>
             </div>
         </div>        
-        <h6>{props.data.prediction}</h6>
+        <h3>{props.data.prediction}</h3>
     </div>
    );
 }
+
 
 export default Display;
