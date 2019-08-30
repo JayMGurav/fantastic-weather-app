@@ -17,6 +17,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
+app.get('/',(req,res) =>{
+  res.redirect('http://localhost:8080/');
+});
 
 app.post('/find', (req, res) => {
   if(/[^a-zA-Z0-9 ,]/i.test(req.body.address)){
