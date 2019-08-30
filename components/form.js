@@ -36,7 +36,7 @@ class FormInput extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.setState({isLoading:true,flag:false})
-    fetch('http://localhost:3000/find',{
+    fetch('https://report-weather.herokuapp.com/find',{
       method: 'POST',
       headers: {
         'Accept': 'application/json',
