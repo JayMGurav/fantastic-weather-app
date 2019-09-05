@@ -9,18 +9,8 @@ class App extends React.Component{
         }
     }
 
-    // componentDidMount() {
-    //     const body = document.getElementsByTagName('body')[0];
-    //     const loadImg =document.getElementById('lo');
-    //     setTimeout(() => {
-    //         this.setState({
-    //             isLoading: false
-    //         })
-    //     }, 5500);
-    // }
 
     render(){
-        // this.state.isLoading ?  body.removeChild(loadImg): null;
        return(
         <div>
             <FormInput />
