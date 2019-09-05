@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
 app.get('/',(req,res) =>{
-  res.redirect('https://report-weather.herokuapp.com:8080/');
+  res.redirect('https://localhost:8080/');
 });
 
 app.post('/find', (req, res) => {
